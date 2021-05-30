@@ -19,6 +19,8 @@ jobs:
         VNC_PASSWORD: ${{ secrets.VNC_PASSWORD }}
       # legacy run command script-- run: ./scripts/configure-legacy.sh
       run: ./scripts/configure.sh
+    - name: Check IP
+      run: curl ipinfo.io
     - name: Starting VNC Server...
       env:
         VNC_SCREENSIZE: ${{ secrets.VNC_SCREENSIZE }}
